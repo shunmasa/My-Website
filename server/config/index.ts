@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 dotenv.config();
 export default {
-   DB_URI: 'mongodb+srv://admin:C36143614cc@cluster0-0prmo.mongodb.net/projectX?retryWrites=true&w=majority',
+   DB_URI: 'mongodb+srv://admin:C36143614cc@cluster0-0prmo.mongodb.net/projectRyuGaku?retryWrites=true&w=majority',
    jwtSecret: 'somesuperkey',
    port: 4020,
    allowedOrigins: ['http://localhost:3000','*','http://localhost:4020'],
