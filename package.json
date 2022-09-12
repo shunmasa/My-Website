@@ -10,7 +10,7 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "start": "cross-env NODE_ENV=production node dist/index.js",
+    "start": "cross-env NODE_ENV=production node dist/index.js -p $PORT",
     "preinstall": "npx npm-force-resolutions"
   },
   "keywords": [],
