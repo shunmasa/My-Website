@@ -10,10 +10,10 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "start": "next start -p $PORT",
+    "start": "cross-env NODE_ENV=production node dist/index.js -p $PORT",
     "preinstall": "npx npm-force-resolutions"
   },
-  "keywords": [],
+  "keywords": [], 
   "author": "",
   "license": "ISC",
   "dependencies": {

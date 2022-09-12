@@ -843,9 +843,10 @@ const Home = () => {
  
 
 const {data,error,loading} = useQuery(GET_POSTS)
-console.log('pdata',data)
+// console.log('pdata',data)
 const {data:dataN,loading:loadingN,error:errorN} = useQuery(GET_NOTICES)  
-  let message = 'Posts';
+  
+let message = 'Posts';
 
   if (loadingN) message = 'Loading...';
   if (errorN) message = `Error! ${errorN}`;
@@ -1263,12 +1264,12 @@ return (
   onInit={(typewriter) => {
     typewriter.typeString('下にドラック')
       .callFunction(() => {
-        console.log('String typed out!');
+        // console.log('String typed out!');
       })
       .pauseFor(2500)
       .deleteAll()
       .callFunction(() => {
-        console.log('All strings were deleted');
+        // console.log('All strings were deleted');
       })
       .start();
   }}

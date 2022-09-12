@@ -16,12 +16,12 @@ const userSchema = new mongoose.Schema(
     password: {
       type: String
     },
-    notices: 
-      {
-        body: String,
+    // notices: 
+    //   {
+    //     body: String,
       
-      }
-    ,
+    //   }
+    // ,
    
   }
   

@@ -68,7 +68,7 @@ const App = (props:any):JSX.Element => {
         <AnimatePresence initial={true} exitBeforeEnter onExitComplete={transitionCallback}>
 
          {/* <Component {...pageProps}  location={location}key={router.route} /> */}
-
+         <title>エクセルニュージーランド</title>
          <Component {...pageProps} location={location}key={router.route}/>
         
          </AnimatePresence>

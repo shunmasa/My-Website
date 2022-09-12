@@ -19,11 +19,11 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css?family=Raleway:100,400,400i,700|Roboto:300,400,500,700&display=swap"
           />
       
-         
+          <script src="https://www.google.com/recaptcha/api.js" async defer></script>
               <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-min.css"></link>
               <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"></link>
             
-              <title>エクセルニュージーランド</title>
+  
               {/* <link rel="icon" type="image/x-icon" href="/favicon.png" /> */}
         </Head>
         <body style={{backgroundColor:'#F1F1F1'}}>
@@ -62,3 +62,4 @@ MyDocument.getInitialProps = async (ctx) => {
   };
 
 };
+

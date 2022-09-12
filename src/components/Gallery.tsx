@@ -160,12 +160,12 @@ img {
    onInit={(typewriter) => {
      typewriter.typeString('Studentフォトギャラリー')
        .callFunction(() => {
-         console.log('String typed out!');
+        //  console.log('String typed out!');
       })
        .pauseFor(2500)
        .deleteAll()
        .callFunction(() => {
-         console.log('All strings were deleted');
+        //  console.log('All strings were deleted');
        })
        .start();
          }}

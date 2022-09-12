@@ -32,6 +32,7 @@ const authMiddleware = new ApolloLink((operation, forward) => {
 
 const webSocketLink: any = process.browser
   ? new WebSocketLink({
+    // uri:"wss://localhost:3000/graphql",
       uri:'wss://excelnz.herokuapp.com/graphql',
       options: {
         reconnect: true
@@ -85,7 +86,7 @@ const isBrowser = typeof window !== "undefined"
 const httpLink =  createUploadLink ({
   // uri: process.env.BASE_URL , 
   uri:'https://excelnz.herokuapp.com/graphql' ,
-  //uri:'http://localhost:3000/graphql',
+  // uri:'http://localhost:3000/graphql',
   credentials: 'same-origin', 
   fetch
 })

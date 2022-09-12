@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
     height: '100vh',
   },
   image: {
-    backgroundImage: 'url(https://source.unsplash.com/random)',
+    backgroundImage: 'url(https://unsplash.com/ja/%E5%86%99%E7%9C%9F/4OfKrwAa75s)',
     backgroundRepeat: 'no-repeat',
     backgroundColor:
       theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
@@ -85,6 +85,7 @@ const login = () => {
 
  const [login,{data,error}] = useMutation(LOGIN_USER)
  console.log("data:",data)
+
  const handleChange = (event:any) => {
   const { name, value } = event.target;
   console.log('value:',value)
@@ -115,6 +116,7 @@ const handleSubmit = async (event: any) => {
     
   try {
     if (validateEmail(props.email)) {
+      console.log('data',[props.email,props.password])
      await login({variables:{...props}})
      Router.replace('/dashboard');
     } else {
@@ -138,7 +140,7 @@ const handleSubmit = async (event: any) => {
        <LockOutlinedIcon />
      </Avatar>
      <Typography component="h1" variant="h5">
-      ご担当者様ログインページ
+      ログインページ
      </Typography>
      <form className={classes.form} noValidate onSubmit={handleSubmit}>
        <TextField
