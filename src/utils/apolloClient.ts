@@ -1,9 +1,12 @@
-import { ApolloClient } from 'apollo-client'
-import { InMemoryCache } from 'apollo-cache-inmemory'
+// import { ApolloClient } from 'apollo-client'
+// import { ApolloClient, InMemoryCache } from '@apollo/client';
+// import { ApolloLink,split,concat} from "@apollo/client/core"
+import { ApolloClient, InMemoryCache, ApolloLink ,split} from '@apollo/client/core';
+// import { InMemoryCache } from 'apollo-cache-inmemory'
 // import { createPersistedQueryLink } from "apollo-link-persisted-queries";
 // import { createHttpLink} from 'apollo-link-http';
 import Cookies from 'js-cookie';
-import { split, ApolloLink, concat } from 'apollo-link';
+// import { split, ApolloLink, concat } from 'apollo-link';
 import { getMainDefinition } from 'apollo-utilities';
 import { WebSocketLink } from 'apollo-link-ws';
 const { createUploadLink } = require('apollo-upload-client');
@@ -11,7 +14,7 @@ const { createUploadLink } = require('apollo-upload-client');
 
 
 
-interface Definintion {
+interface Def {
   kind: string;
   operation?: string;
 }
@@ -33,7 +36,8 @@ const authMiddleware = new ApolloLink((operation, forward) => {
 const webSocketLink: any = process.browser
   ? new WebSocketLink({
     // uri:"wss://localhost:3000/graphql",
-      uri:'wss://excelnz.herokuapp.com/graphql',
+    uri:`wss://${process.env.BASE_URL}`,
+      // uri:'wss://excelnz.herokuapp.com/graphql',
       options: {
         reconnect: true
       }
@@ -84,9 +88,7 @@ export const destroyToken = async () => {
 
 const isBrowser = typeof window !== "undefined"
 const httpLink =  createUploadLink ({
-  // uri: process.env.BASE_URL , 
-  uri:'https://excelnz.herokuapp.com/graphql' ,
-  // uri:'http://localhost:3000/graphql',
+  uri:`https://${process.env.BASE_URL}`, 
   credentials: 'same-origin', 
   fetch
 })
@@ -94,7 +96,7 @@ const httpLink =  createUploadLink ({
 const link = process.browser
   ? split(
       ({ query }) => {
-        const { kind, operation }: Definintion = getMainDefinition(query);
+        const { kind, operation }: Def = getMainDefinition(query);
         return kind === 'OperationDefinition' && operation === 'subscription';
       },
       webSocketLink,
@@ -113,7 +115,7 @@ export default function createApolloClient(initialState, ctx) {
     return new ApolloClient({
       connectToDevTools: isBrowser,
       ssrMode: !isBrowser, // Disables forceFetch on the server (so queries are only run once)
-      link: concat(authMiddleware, link),//createUploadLink
+      link: authMiddleware.concat((link as unknown) as ApolloLink),//createUploadLink
       cache: new InMemoryCache().restore(initialState||{}),
     })
   }

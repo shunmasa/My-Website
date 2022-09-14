@@ -233,7 +233,7 @@ export default function CallToAction() {
     <Grid
       container
       alignItems="center"
-      justify={matchesSM ? "center" : "space-between"}
+      justifyContent={matchesSM ? "center" : "space-between"}
       className={classes.background}
       direction={matchesSM ? "column" : "row"}
     >
@@ -274,7 +274,7 @@ export default function CallToAction() {
               まずは一度お問い合わせください。
             </Typography>
      
-            <Grid container justify={matchesSM ? "center" : undefined} item>
+            <Grid container justifyContent={matchesSM ? "center" : undefined} item>
               
             </Grid>
           </Grid>

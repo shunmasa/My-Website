@@ -91,7 +91,7 @@ const useStyles = makeStyles(theme => ({
 
   </div> */}
       <Hidden mdDown>
-        <Grid container justify="center" className={classes.mainContainer}>
+        <Grid container justifyContent="center" className={classes.mainContainer}>
     
           <Grid item className={classes.gridItem}>
             <Grid

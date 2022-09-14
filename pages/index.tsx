@@ -1374,8 +1374,8 @@ return (
           ) : (
             dataN &&
             dataN.notices.map((n) => (
-          <motion.li initial={{ opacity: 0 }}
-      animate={{ opacity: shouldShowActions ? 1 : 0 }}
+          <motion.li key={n._id} initial={{ opacity: 0 }}
+        animate={{ opacity: shouldShowActions ? 1 : 0 }}
       transition={{ opacity: { duration: 0.8} }}>
          <strong style={{marginLeft:"10px"}}><dt><time>{moment(n.createdAt).format("YYYY/MM/DD")}</time></dt></strong> 
          {n.body}
@@ -1528,7 +1528,7 @@ Auckland is at COVID-19 alert level 3 and the rest of New Zealand at level 2 for
 
 
 
-            <Grid item container justify={matchesMD ? "center" : "center"}>
+            <Grid item container justifyContent={matchesMD ? "center" : "center"}>
  
       
    
@@ -1546,7 +1546,7 @@ Auckland is at COVID-19 alert level 3 and the rest of New Zealand at level 2 for
                 ①正しい留学先を選ぶ−どうしてクライストチャーチなの？
                   </Typography>
         
-                <Grid item container justify="center" style={{paddingTop:"3em"}}>
+                <Grid item container justifyContent="center" style={{paddingTop:"3em"}}>
                 <ScrollAnimation animateIn='fadeIn'
                    animateOut='fadeOut'>
                   <img
@@ -1598,7 +1598,7 @@ Auckland is at COVID-19 alert level 3 and the rest of New Zealand at level 2 for
                 ②正しい学校を選ぶ−個性に合った学校選び
                   </Typography>
                 
-                <Grid item container justify="center" style={{paddingTop:"1em"}}>
+                <Grid item container justifyContent="center" style={{paddingTop:"1em"}}>
                 <ScrollAnimation animateIn='fadeIn'
                    animateOut='fadeOut'delay={1200}>
                   <img
@@ -1633,7 +1633,7 @@ Auckland is at COVID-19 alert level 3 and the rest of New Zealand at level 2 for
                 direction="column"
                 md
                 alignItems={matchesMD ? "center" : "center"}
-                justify="center"
+                justifyContent="center"
                 className={classes.boxContainer2}
               >
               
@@ -1643,7 +1643,7 @@ Auckland is at COVID-19 alert level 3 and the rest of New Zealand at level 2 for
                   </Typography>
                   <ScrollAnimation animateIn='fadeIn'
                    animateOut='fadeOut' delay={1500}>
-                  <Grid item container justify="center" style={{paddingTop:"1em"}}>
+                  <Grid item container justifyContent="center" style={{paddingTop:"1em"}}>
                 
                   <img
                     src="/assets/search.svg"
@@ -1709,7 +1709,7 @@ Excel NZのモットーは、「もし、自分の子供が留学をして、こ
 </svg> */}
       <Grid item ref={refs.section3}>
     
-    <Grid container className={classes.desContainer}justify="flex-start" 
+    <Grid container className={classes.desContainer}justifyContent="flex-start" 
     alignItems="center" direction="row">
   
   

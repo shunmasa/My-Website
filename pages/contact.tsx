@@ -221,7 +221,7 @@ const Contact = (props)=> {
         item
         container
         direction="column"
-        justify="center"
+        justifyContent="center"
         alignItems="center"
         style={{
           marginBottom: matchesMD ? "5em" : 0,
@@ -487,7 +487,7 @@ const Contact = (props)=> {
         direction={matchesMD ? "column" : "row"}
         className={classes.background}
         alignItems="center"
-        justify={matchesMD ? "center" : undefined}
+        justifyContent={matchesMD ? "center" : undefined}
         lg={8}
         xl={9}
       >

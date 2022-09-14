@@ -193,6 +193,18 @@ interface Data {
   username:string
 }
 
+// interface TablePaginationActionsProps {
+//   count: number;
+//   page: number;
+//   rowsPerPage: number;
+//   onPageChange: (
+//     event: React.MouseEvent<HTMLButtonElement>,
+//     newPage: number,
+//   ) => void;
+// }
+
+
+
 
 
 
@@ -299,7 +311,7 @@ const ReadLimit = ({ children, maxCharacter = 148 }) => {
    variants={{ exit: { transition: { staggerChildren: 0.1 } } }}
   >
 
-    <Grid item container direction="row"  justify="center" lg>
+    <Grid item container direction="row"  justifyContent="center" lg>
     <ScrollAnimation animateIn='fadeIn'>
 
     <div className={classes.h1}>
@@ -319,7 +331,7 @@ const ReadLimit = ({ children, maxCharacter = 148 }) => {
 
 
 
-  <Grid container spacing={3} alignItems="center" justify="space-around">
+  <Grid container spacing={3} alignItems="center" justifyContent="space-around">
    
   {(rowsPerPage > 0
    ? postList && postList.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
@@ -329,7 +341,7 @@ const ReadLimit = ({ children, maxCharacter = 148 }) => {
         <Grid item className={classes.card} container direction="column"md={5}>
      
  
-      <Grid  item container direction="row" justify="space-between">
+      <Grid  item container direction="row" justifyContent="space-between">
       <motion.div variants={postVariants}> 
         <Box display="inline-block" >
 
@@ -383,14 +395,14 @@ const ReadLimit = ({ children, maxCharacter = 148 }) => {
 <TableFooter>
 <TableRow>
   <TablePagination
-
     rowsPerPageOptions={[2,4,6]}
     colSpan={2}
     count={postList.length}
     rowsPerPage={rowsPerPage}
     page={page}
-    onChangePage={handleChangePage}
-    onChangeRowsPerPage={handleChangeRowsPerPage}
+    onPageChange={handleChangePage}
+    onRowsPerPageChange={handleChangeRowsPerPage}
+   
     >
   </TablePagination>
 </TableRow>
