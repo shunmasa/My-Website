@@ -6,7 +6,7 @@
   "scripts": { 
     "build": "next build",
     "dev": "next dev",
-    "start": "cross-env NODE_ENV=development node dist/index.js",
+    "start": "cross-env NODE_ENV=production node dist/index.js",
     "preinstall": "npx npm-force-resolutions"
   },
   "keywords": [],
