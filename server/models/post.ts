@@ -3,7 +3,7 @@ var shortId = require('shortid');
 
 const postSchema = new mongoose.Schema(
   {
-    _id: {type: String, unique: true, default: shortId.generate},
+    _id:mongoose.Schema.Types.ObjectId,
     username: {
       type: String,
       required: true

@@ -24,6 +24,7 @@ const NoticeQueries = {
     }),
     notice: (parent, { _id }) => tslib_1.__awaiter(void 0, void 0, void 0, function* () {
         try {
+            console.log("tId", noticeId);
             const notice = yield notice_1.default.findById(_id);
             return merge_1.transformNotice(notice);
         }

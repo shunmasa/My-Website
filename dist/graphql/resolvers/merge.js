@@ -53,6 +53,7 @@ const getPost = (id) => tslib_1.__awaiter(void 0, void 0, void 0, function* () {
 });
 exports.getPost = getPost;
 const transformPost = (post) => {
+    
     return Object.assign(Object.assign({}, post._doc), { _id: post.id, createdAt: date_1.default(post._doc.createdAt), updatedAt: date_1.default(post._doc.updatedAt) });
 };
 exports.transformPost = transformPost;

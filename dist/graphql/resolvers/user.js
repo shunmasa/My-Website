@@ -25,6 +25,7 @@ const UserQueries = {
     user: (parent, { userId }) => tslib_1.__awaiter(void 0, void 0, void 0, function* () {
         try {
             const user = yield user_1.default.findById(userId);
+           
             return merge_1.transformUser(user);
         }
         catch (err) {

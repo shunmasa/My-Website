@@ -4,7 +4,7 @@ const tslib_1 = require("tslib");
 const mongoose_1 = tslib_1.__importDefault(require("mongoose"));
 var shortId = require('shortid');
 const postSchema = new mongoose_1.default.Schema({
-    _id: { type: String, unique: true, default: shortId.generate },
+    _id: mongoose_1.default.Schema.Types.ObjectId,
     username: {
         type: String,
         required: true

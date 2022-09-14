@@ -61,6 +61,7 @@ const PostQueries = {
 
     try {
       const post = await Post.findById(postId);
+      console.log("p",post)
       return transformPost(post);
     } catch (err) {
       throw err;

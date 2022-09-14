@@ -48,6 +48,7 @@ const PostQueries = {
         console.log("pId", postId);
         try {
             const post = yield post_1.default.findById(postId);
+            console.log("p",post)
             return merge_1.transformPost(post);
         }
         catch (err) {
