@@ -26,7 +26,7 @@ module.exports = {
   },
   env: {
     BASE_URL: dev ? 'http://localhost:3000/graphql' : 'https://excelnz.herokuapp.com/graphql',
-    WSS_BASE_URL: dev ? 'http://localhost:3000/graphql' : 'https://excelnz.herokuapp.com/graphql',
+    WSS_BASE_URL: dev ? 'wss://localhost:3000/graphql' : 'wss://excelnz.herokuapp.com/graphql',
   
   }
 }
